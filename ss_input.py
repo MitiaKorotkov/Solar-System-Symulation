@@ -45,7 +45,14 @@ def save_data_to_file(data_filename, objects):
     :param data_filename: Имя файла для записи
     :param objects: Массив тел, данные о которых нужно записать
     """
-    pass
+    with open(data_filename, 'w') as f:
+        # Запись данных в хорошем виде в файл
+        for obj in objects:
+            if obj.id == 'star':
+                f.write('Star '+ str(obj.x) + ' ' + str(obj.y) + ' ' + str(obj.m) + ' ' + str(obj.vx) + ' ' + str(obj.vy) + '\n')
+            if obj.id == 'planet':
+                f.write('Planet '+ str(obj.x) + ' ' + str(obj.y) + ' ' + str(obj.m) + ' ' + str(obj.vx) + ' ' + str(obj.vy) + '\n')    
+            
 
 if __name__ == '__main__':
     print('This module is not to run the program')
